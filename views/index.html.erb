@@ -10,3 +10,30 @@
   <%= @name %>
 </p>
 
+<% middle_name = "Peter" %>
+<p>My middle name is:
+	<%= middle_name %>
+</p>
+     <% if @request.query['first_name'] && !@request.query['first_name'].empty? %>
+    Hello there <%= @request.query['first_name'] %>
+  <% else %>
+    Enter thy name
+  <% end %>
+<br />
+ <%= @request.query.inspect %>
+ <form method='post' action="<%= @request.path %>">
+        First name: <input type="text" name="first_name" placeholder='first name'/><br />
+        <input type="submit" value="Submit" />
+    </form>
+    <form method = 'post' action="<%= @request.path %>">
+    	Whats your favorite Movie? <input type="text" name= "movie" placeholder= "Favorite Movie" /><br />
+    	<input type="submit" value = "Submit" />
+    </form>
+    <%= @request.query.inspect %>
+    <% if @request.query['movie'] && !@request.query['movie'].empty? %>
+    Your favorite movie is <%= @request.query['movie'] %>
+    <% else %>
+    Enter a movie
+    <% end %>
+    
+
