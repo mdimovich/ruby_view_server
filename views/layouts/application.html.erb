@@ -1,10 +1,34 @@
+  <%
+    def link_to(name, url)
+        return "<a href='#{url}'>#{name}</a>"
+     end
+    %>
 <html>
+<head>
+  <style type="text/css">
+  body{
+  background-color: #D8D8D8;
+  font-family: Verdana;
+  }
+  h1{
+    text-align: center;
+  }
+  a{
+    text-decoration: none;
+    color: #6699CC;
+  }
+  a:hover{
+    color: aqua;
+  }
+  </style>
   <body>
     <h1>You're using a layout</h1>
     <p>
       <h3> I'm a header</h3>
       <p>Put things in the header</p>
       <a href='me.html'>Me</a>
+      <a href = "http://github.com">Go To Github!</a>
+      <a href = "http://reddit.com">Go To Reddit!</a>
 
     </p>
     <hr />
@@ -15,6 +39,9 @@
     <div>
       <h3> I'm a footer</h3>
       <p>Put things in the footer</p>
+      <a href = "http://facebook.com">Go To Facebook!</a>
+      <%= link_to('This is a link to google', 'http://google.com') %><br />
+      <%= link_to('Head over to Twitter!', 'http://twitter.com') %>
     </div>
   </body>
 </html>
